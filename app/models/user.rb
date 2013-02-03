@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
   
 
   def generate_token
-    self.token = SecureRandom.uuid
+    self.token = SecureRandom.hex(16)
   end
 
   def reset_token!
-    self.token = SecureRandom.uuid
+    self.token = SecureRandom.hex(16)
     self.save!
   end
 end

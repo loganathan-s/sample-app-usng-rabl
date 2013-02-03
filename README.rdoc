@@ -15,17 +15,12 @@ validation error since this application is created for my personal reference.
 2. API to get all Blog Entries:
        http://rabl-app.herokuapp.com/blog_entries.json?page=1(optional)
 
-3. API to get all Blog Entries(Admin):
-      http://rabl-app.herokuapp.com/blog_entries.json?token=auth_token
-      
-4. API to get all Blog Categories(Admin):
-       http://rabl-app.herokuapp.com/blog_entries.json?token= auth_token
-
-5. API to get all Blog Categories:
+3. API to get all Blog Categories:
        http://rabl-app.herokuapp.com/blog_categories.json
 
-6. API to comment on Blog Entry.
+4. API to comment on Blog Entry.
 	POST URL: http://rabl-app.herokuapp.com//comments.json
+	
 	Request Body:
 	   {
 	    "token": "authtoken",

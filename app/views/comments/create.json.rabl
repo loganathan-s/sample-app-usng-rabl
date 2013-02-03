@@ -13,3 +13,7 @@ child :blog_entry do
       attributes :id, :description
     end
 end
+
+if current_user
+ node(:auth_token){current_user.token}
+end

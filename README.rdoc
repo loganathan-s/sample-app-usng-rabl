@@ -3,8 +3,8 @@
 This is a ROR blog application which uses the RABL gem for json responses and 
 authentication is done without any additional gems except gem bcrypt-ruby to generate hashed password string.
 
-Api is available to clients to retireve the blog categories, blog entries and can able to
-comment an blog entry vi REST api in JSON format. And this application might contain
+Api is available to clients inorder to retireve the blog categories, blog entries and can able to
+comment an blog entry via REST api in JSON format. And this application might contain
 validation error since this application is created for my personal reference.
 
 == Apis of this application

@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    puts 11111111111111111
-    puts params.inspect
-    puts 11111111111111111
      params[:token] ? User.find_by_token(params[:token]) : (session[:user_id] ? User.find_by_id(session[:user_id])  : nil)
   end
   

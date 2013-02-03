@@ -19,7 +19,7 @@ class BlogCategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json # show.json.rabl
+      format.json # show.json.
     end
   end
 

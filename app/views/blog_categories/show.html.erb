@@ -10,11 +10,12 @@
   <%= @blog_category.description %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @blog_category.user %>
-</p>
-
-
-<%= link_to 'Edit', edit_blog_category_path(@blog_category) %> |
+<% if current_user_category?(@blog_category)%>
+  <%= link_to 'Edit', edit_blog_category_path(@blog_category) %> |
+<%else%>
+  <p>
+    <b>User:</b>
+    <%= @blog_category.user.name %>
+  </p>
+<%end %>
 <%= link_to 'Back', blog_categories_path %>

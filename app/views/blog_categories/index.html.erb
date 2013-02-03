@@ -1,25 +1,17 @@
-<h1>Listing blog_categories</h1>
+<h1><i>Blog categories</i></h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blog_categories.each do |blog_category| %>
-  <tr>
-    <td><%= blog_category.name %></td>
-    <td><%= blog_category.description %></td>
-    <td><%= blog_category.user %></td>
-    <td><%= link_to 'Show', blog_category %></td>
-    <td><%= link_to 'Edit', edit_blog_category_path(blog_category) %></td>
-    <td><%= link_to 'Destroy', blog_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @blog_categories.each do |blog_category| %>
+    <tr><h3><%= blog_category.name %></h3></tr><br/>
+      <tr><%= blog_category.description %></tr>&nbsp;&nbsp;&nbsp;
+      <% if current_user_category?(blog_category)%>
+        <tr><%= link_to 'Edit', edit_blog_category_path(blog_category) %></tr>
+        <tr><%= link_to 'Destroy', blog_category, method: :delete, data: { confirm: 'Are you sure?' } %></tr>
+      <% else %>
+        <tr><i><b>Created by</b> <%= blog_category.user.name %></i></tr>
+      <%  end%>
+      <tr>&nbsp;<%= link_to 'Show', blog_category %></tr>
+  <% end %>
 </table>
 
 <br />

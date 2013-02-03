@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @blog_entry.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @blog_entry.content %>
+</p>
+
+<p>
+  <b>Published on:</b>
+  <%= @blog_entry.created_at.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <b>Written By:</b>
+  <%= @blog_entry.user.name %>
+</p>
+
+<p><%= render("comments",blog_entry: @blog_entry,comment: Comment.new) %></p>
+ <% if current_user_entry?(@blog_entry) %>
+  <%= link_to 'Edit', edit_blog_entry_path(@blog_entry) %> |
+ <% end %>
+<%= link_to 'Back', blog_entries_path %>

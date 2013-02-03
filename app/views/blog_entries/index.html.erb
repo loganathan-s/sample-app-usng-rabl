@@ -1,0 +1,22 @@
+<h1>Listing Blog entries</h1>
+
+<table>
+  <% @blog_entries.each do |blog_entry| %>
+    <tr><h3><%= blog_entry.title %></h3></tr>
+  <tr><%= blog_entry.content.truncate(150) %> <%= link_to "More..",blog_entry %></tr></br>
+
+  <%  unless current_user_entry?(blog_entry) %>
+    <i><tr>Published on <%= blog_entry.created_at.strftime("%d/%m/%Y") %>
+      <b> Written By <%= blog_entry.user.name %></b></tr></i>
+  <%else%>
+    <tr><%= link_to 'Edit', edit_blog_entry_path(blog_entry) %></tr><br/>
+    <tr><%= link_to 'Destroy', blog_entry, method: :delete, data: { confirm: 'Are you sure?' } %></tr>
+  <%  end%>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog entry', new_blog_entry_path %>
+<%= will_paginate @blog_entries %>

@@ -1,0 +1,4 @@
+<% comment = (params["comment"] || params[:action] == "destroy") ? Comment.new :  @comment %>
+$('#comments').html('<%=  escape_javascript(render("blog_entries/comments",blog_entry: @comment.blog_entry,comment: comment ))%>');
+
+

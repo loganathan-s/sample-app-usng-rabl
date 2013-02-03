@@ -1,0 +1,22 @@
+<div id="comments">
+  
+  <table>
+    <h4>Comments</h4>
+    <% blog_entry.comments.each do |comment|%>
+      <tr>
+          <td><%= comment.description %></td>
+        <td> by <%=  comment.user.name%></td>
+        <% if current_user_comments?(comment) %>
+          <td><%= link_to 'Edit', edit_comment_path(comment),remote: true %></td>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' },remote: true %></td>
+        <%end%> 
+      </tr>
+      <br/>
+    <% end %>
+  </table>
+  <%= form_for(comment,remote: true) do |f|%>
+    <%= f.hidden_field :blog_entry_id,value: blog_entry.id %>
+    <div><%= f.text_area :description %></div>
+    <%= f.submit %>
+  <% end %>
+</div>

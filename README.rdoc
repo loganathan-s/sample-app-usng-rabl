@@ -25,7 +25,7 @@ validation error since this application is created for my personal reference.
        http://rabl-app.herokuapp.com/blog_categories.json
 
 6. API to comment on Blog Entry.
-	URL: http://rabl-app.herokuapp.com//comments.json
+	POST URL: http://rabl-app.herokuapp.com//comments.json
 	Request Body:
 	   {
 	    "token": "authtoken",
@@ -38,5 +38,5 @@ validation error since this application is created for my personal reference.
 == Default Credentials
 
 1. User
-       Email: demo1@test.com, demo2@test.com
+       Email: demo0@test.com, demo1@test.com
        Password: 123456
